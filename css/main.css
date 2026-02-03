@@ -1,0 +1,122 @@
+@font-face {
+    font-family: "Overused Grotesk";
+    src: url("/assets/fonts/OverusedGrotesk/OverusedGrotesk-VF.woff2") format("woff2"),
+         url("/assets/fonts/OverusedGrotesk/OverusedGrotesk-VF.woff") format("woff"),
+         url("/assets/fonts/OverusedGrotesk/OverusedGrotesk-VF.tff") format("tff");
+    font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-bg-main: hsl(265, 100%, 7%);
+    --clr-bg-light: hsl(from var(--clr-bg-main) h s calc(l + 5));
+    --clr-bg-lighter: hsl(from var(--clr-bg-main) h s calc(l + 10));
+
+    --clr-text-main: hsl(0, 0%, 100%);
+    --clr-text-muted: hsl(0, 0%, 60%);
+
+    --clr-primary: hsl(265, 100%, 50%);
+
+    --font-family: "Overused Grotesk", "sans-serif";
+    --font-h1: normal 700 4rem/1 var(--font-family);
+    --font-body: normal 400 1rem/1 var(--font-family);
+    --font-button: normal 500 1rem/1 var(--font-family);
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--clr-bg-main);
+    color: var(--clr-text-main);
+    font: var(--font-body);
+    display: grid;
+    place-items: center;
+}
+
+h1 {
+    text-align: center;
+    font: var(--font-h1);
+}
+
+button, input {
+    color: var(--clr-text-main);
+    border: none;
+    border-radius: 4px;
+    padding: 1rem 2rem;
+}
+
+button {
+    cursor: pointer;
+    font: var(--font-button);
+    background-color: var(--clr-primary);
+}
+
+input {
+    padding: 1rem 1rem;
+    font: var(--font-body);
+    background-color: var(--clr-bg-lighter);
+}
+
+input::placeholder {
+    color: var(--clr-text-muted);
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    aspect-ratio: 1 / 1;
+}
+
+.root {
+    width: min(40rem, 90vw);
+}
+
+.container {
+    padding: 1.5rem;
+    background-color: var(--clr-bg-light);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+.task-form {
+    display: flex;
+    gap: 1rem;
+}
+
+#task-input {
+    flex: 1;
+}
+
+.tasks-list {
+    list-style: none;
+}
+
+.tasks-list li {
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    background-color: var(--clr-bg-lighter);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tasks-list li p {
+    flex: 1;
+}
+
+.tasks-list li button {
+    padding: 0.5rem 0.75rem;
+}
