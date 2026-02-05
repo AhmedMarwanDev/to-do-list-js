@@ -24,7 +24,7 @@
 
     --clr-primary: hsl(265, 100%, 50%);
 
-    --font-family: "Overused Grotesk", "sans-serif";
+    --font-family: "Montserrat", sans-serif;
     --font-h1: normal 700 4rem/1 var(--font-family);
     --font-body: normal 400 1rem/1 var(--font-family);
     --font-button: normal 500 1rem/1 var(--font-family);
@@ -70,7 +70,7 @@ input::placeholder {
     color: var(--clr-text-muted);
 }
 
-input[type="checkbox"] {
+.checkbox {
     width: 16px;
     height: 16px;
     aspect-ratio: 1 / 1;
@@ -91,7 +91,7 @@ header {
     margin-bottom: 2rem;
 }
 
-.task-form {
+#task-form {
     display: flex;
     gap: 1rem;
 }
@@ -100,23 +100,43 @@ header {
     flex: 1;
 }
 
-.tasks-list {
+#search-input {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#message {
+    text-align: center;
+    color: var(--clr-text-muted);
+}
+
+#tasks-list {
     list-style: none;
 }
 
-.tasks-list li {
-    padding: 1rem 1.5rem;
-    border-radius: 4px;
+#tasks-list li {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
     background-color: var(--clr-bg-lighter);
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
-.tasks-list li p {
+#tasks-list li.done {
+    opacity: 0.5;
+}
+    
+#tasks-list li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+#tasks-list li p {
+    margin-left: 0.5rem;
     flex: 1;
 }
 
-.tasks-list li button {
-    padding: 0.5rem 0.75rem;
+#tasks-list li button {
+    padding: 0.5rem 0.5rem;
 }
