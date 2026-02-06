@@ -21,8 +21,8 @@
 
     --clr-text-main: hsl(0, 0%, 100%);
     --clr-text-muted: hsl(0, 0%, 50%);
-
-    --clr-primary: hsl(30, 100%, 50%);
+    --clr-text-link: hsl(220, 100%, 56%);
+    --clr-primary: hsl(20, 100%, 50%);
 
     --font-family: "Montserrat", sans-serif;
     --font-h1: normal 700 4rem/1 var(--font-family);
@@ -45,7 +45,7 @@ h1 {
     font: var(--font-h1);
 }
 
-button, input:not([type="checkbox"]) {
+button, input {
     color: var(--clr-text-main);
     border: none;
     border-radius: 4px;
@@ -71,8 +71,8 @@ input::placeholder {
 input[type="checkbox"] {
     appearance: none;
     position: relative;
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     padding: 0;
     margin: 0;
     border: 2px solid var(--clr-primary);
@@ -86,8 +86,8 @@ input[type="checkbox"]:checked:before {
     top: -2px;
     left: -2px;
     background-color: var(--clr-primary);
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     padding: 0;
     margin: 0;
@@ -100,7 +100,7 @@ input[type="checkbox"]:checked:before {
 .root {
     margin: 0 auto;
     padding-top: 5rem;
-    width: min(40rem, 90vw);
+    width: min(40rem, 100vw);
 }
 
 .container {
@@ -167,4 +167,22 @@ header {
 
 #tasks-list li button {
     padding: 0.5rem 0.5rem;
+}
+
+
+footer {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    text-align: center;
+}
+
+footer a {
+    font-weight: 500;
+    color: var(--clr-text-link);
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: var(--clr-text-main);
 }

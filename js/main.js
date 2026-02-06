@@ -54,11 +54,13 @@ function renderTasks () {
     if (!filteredTasksArray.length && searchQuery == "") {
         message.textContent = "No tasks available";
         serachInput.style.display = "none";
+        deleteAllBtn.style.display = "none";
     } else if (!filteredTasksArray.length && searchQuery !== "") {
         message.textContent = "No tasks available";
     } else if (filteredTasksArray.length){
         message.textContent = "";
         serachInput.style.display = "block";
+        deleteAllBtn.style.display = "block";
     };
 
     deleteAllBtn.textContent = `Delete All (${tasksArray.length})`;
@@ -159,6 +161,7 @@ function deleteTask (index) {
     if (currentMode == "edit") switchToCreateMode();
 };
 
+
 // delete all tasks
 
 function deleteAll () {
@@ -167,12 +170,13 @@ function deleteAll () {
     renderTasks();
 };
 
+
 // check tasks
 
 function checkTask (index) {
     const checkedTask = tasksArray.find(task => task.id == index);
     checkedTask.done = !checkedTask.done;
-    
+
     localStorage.setItem("tasks", JSON.stringify(tasksArray));
     renderTasks();
 };
