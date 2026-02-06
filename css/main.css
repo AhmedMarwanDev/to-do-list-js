@@ -16,8 +16,8 @@
 
 :root {
     --clr-bg-main: hsl(265, 100%, 7%);
-    --clr-bg-light: hsl(from var(--clr-bg-main) h s calc(l + 5));
-    --clr-bg-lighter: hsl(from var(--clr-bg-main) h s calc(l + 10));
+    --clr-bg-light: hsl(265, 100%, 12%);
+    --clr-bg-lighter: hsl(265, 100%, 17%);
 
     --clr-text-main: hsl(0, 0%, 100%);
     --clr-text-muted: hsl(0, 0%, 60%);
