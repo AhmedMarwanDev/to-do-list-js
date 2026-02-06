@@ -15,14 +15,14 @@
 }
 
 :root {
-    --clr-bg-main: hsl(265, 100%, 7%);
-    --clr-bg-light: hsl(265, 100%, 12%);
-    --clr-bg-lighter: hsl(265, 100%, 17%);
+    --clr-bg-main: hsl(0, 0%, 0%);
+    --clr-bg-light: hsl(0, 0%, 7%);
+    --clr-bg-lighter: hsl(0, 0%, 12%);
 
     --clr-text-main: hsl(0, 0%, 100%);
-    --clr-text-muted: hsl(0, 0%, 60%);
+    --clr-text-muted: hsl(0, 0%, 50%);
 
-    --clr-primary: hsl(265, 100%, 50%);
+    --clr-primary: hsl(30, 100%, 50%);
 
     --font-family: "Montserrat", sans-serif;
     --font-h1: normal 700 4rem/1 var(--font-family);
@@ -38,8 +38,6 @@ body {
     background-color: var(--clr-bg-main);
     color: var(--clr-text-main);
     font: var(--font-body);
-    display: grid;
-    place-items: center;
 }
 
 h1 {
@@ -47,7 +45,7 @@ h1 {
     font: var(--font-h1);
 }
 
-button, input {
+button, input:not([type="checkbox"]) {
     color: var(--clr-text-main);
     border: none;
     border-radius: 4px;
@@ -70,13 +68,38 @@ input::placeholder {
     color: var(--clr-text-muted);
 }
 
-.checkbox {
-    width: 16px;
-    height: 16px;
-    aspect-ratio: 1 / 1;
+input[type="checkbox"] {
+    appearance: none;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin: 0;
+    border: 2px solid var(--clr-primary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-color: var(--clr-primary);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    background-image: url("/assets/icons/checkmark.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .root {
+    margin: 0 auto;
+    padding-top: 5rem;
     width: min(40rem, 90vw);
 }
 
@@ -106,6 +129,11 @@ header {
     margin-bottom: 1rem;
 }
 
+#delete-all-btn {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
 #message {
     text-align: center;
     color: var(--clr-text-muted);
@@ -124,8 +152,8 @@ header {
     gap: 0.5rem;
 }
 
-#tasks-list li.done {
-    opacity: 0.5;
+#tasks-list li.done p {
+    text-decoration: line-through;
 }
     
 #tasks-list li:not(:last-child) {
