@@ -1,6 +1,7 @@
 const taskFrom = document.getElementById("task-form");
 const taskInput = document.getElementById("task-input");
 const serachInput = document.getElementById("search-input");
+const deleteAllBtn = document.getElementById("delete-all-btn");
 const tasksList = document.getElementById("tasks-list");
 const tasksListWrapper = document.getElementById("tasks-list-wrapper");
 const message = document.getElementById("message");
@@ -59,6 +60,8 @@ function renderTasks () {
         message.textContent = "";
         serachInput.style.display = "block";
     };
+
+    deleteAllBtn.textContent = `Delete All (${tasksArray.length})`;
     
     filteredTasksArray.forEach(task => { 
         const li = document.createElement("li");
@@ -156,6 +159,13 @@ function deleteTask (index) {
     if (currentMode == "edit") switchToCreateMode();
 };
 
+// delete all tasks
+
+function deleteAll () {
+    tasksArray = [];
+    localStorage.setItem("tasks", JSON.stringify(tasksArray));
+    renderTasks();
+};
 
 // check tasks
 
@@ -186,6 +196,8 @@ taskFrom.addEventListener("submit", () => {
 });
 
 serachInput.addEventListener("keyup", searchTasks);
+
+deleteAllBtn.addEventListener("click", deleteAll);
 
 tasksList.addEventListener("click", event => {
     const button = event.target.closest("button");
