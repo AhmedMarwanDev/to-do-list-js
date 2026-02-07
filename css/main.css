@@ -14,7 +14,7 @@
     --clr-text-main: hsl(0, 0%, 100%);
     --clr-text-muted: hsl(0, 0%, 50%);
     --clr-text-link: hsl(220, 100%, 56%);
-    --clr-primary: hsl(20, 100%, 50%);
+    --clr-primary: hsl(260, 100%, 65%);
 
     --font-family: "Montserrat", sans-serif;
     --font-h1: normal 700 4rem/1 var(--font-family);
