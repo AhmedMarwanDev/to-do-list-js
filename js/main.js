@@ -193,6 +193,8 @@ taskFrom.addEventListener("submit", () => {
     if (currentMode == "create") {
         createTask();
         taskInput.value = "";
+        draftTaskInput = taskInput.value;
+        sessionStorage.setItem("draftTaskInput", draftTaskInput);
     } else if (currentMode == "edit") {
         editTask(editingTaskIndex);
         switchToCreateMode();
