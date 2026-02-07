@@ -26,7 +26,7 @@
 
     --font-family: "Montserrat", sans-serif;
     --font-h1: normal 700 4rem/1 var(--font-family);
-    --font-body: normal 400 1rem/1 var(--font-family);
+    --font-body: normal 400 1rem/1.5 var(--font-family);
     --font-button: normal 500 1rem/1 var(--font-family);
 }
 
@@ -35,9 +35,12 @@ html, body {
 }
 
 body {
+    padding: 0.75rem;
     background-color: var(--clr-bg-main);
     color: var(--clr-text-main);
     font: var(--font-body);
+    display: flex;
+    justify-content: center;
 }
 
 h1 {
@@ -98,9 +101,9 @@ input[type="checkbox"]:checked:before {
 }
 
 .root {
-    margin: 0 auto;
     padding-top: 5rem;
-    width: min(40rem, 100vw);
+    height: fit-content;
+    width: min(45rem, 100vw);
 }
 
 .container {
@@ -185,4 +188,37 @@ footer a {
 
 footer a:hover {
     color: var(--clr-text-main);
+}
+
+@media (max-width: 600px) {
+    :root {
+        --font-h1: normal 700 3rem/1 var(--font-family);
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    button, input {
+        padding: 0.75rem 1rem;
+    }
+
+    
+    #task-form {
+        flex-direction: column;
+    }
+
+    #tasks-list li {
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        background-color: var(--clr-bg-lighter);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    #tasks-list li p {
+        margin: 0;
+        flex: 1;
+    }
 }
